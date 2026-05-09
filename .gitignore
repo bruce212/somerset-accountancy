@@ -28,5 +28,5 @@ bun-debug.log*
 .idea/
 
 # bun
-bun.lockb
 .bun/
+# Note: commit bun.lockb for reproducible installs (it is binary; that's fine).
