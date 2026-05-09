@@ -1,0 +1,267 @@
+---
+import Layout from "../layouts/Layout.astro";
+import TaxEstimator from "../components/TaxEstimator.svelte";
+import FAQ from "../components/FAQ.svelte";
+
+const services = [
+  {
+    title: "Year-end accounts",
+    body: "Statutory accounts prepared and filed with Companies House and HMRC, with clear commentary on what the numbers mean for your business.",
+  },
+  {
+    title: "Tax planning",
+    body: "Corporate, personal, and capital gains tax strategies designed to keep more of what you earn — fully compliant, fully documented.",
+  },
+  {
+    title: "Bookkeeping & payroll",
+    body: "Cloud bookkeeping on Xero or QuickBooks, RTI payroll, pension auto-enrolment, and a real-time view of your finances.",
+  },
+  {
+    title: "Audit & assurance",
+    body: "Statutory audits, grant audits, and assurance reviews delivered to ICAEW standards by a team that listens before it tests.",
+  },
+  {
+    title: "Business advisory",
+    body: "Forecasting, cashflow modelling, KPI dashboards, and board-level support — the conversations that change the trajectory of a business.",
+  },
+  {
+    title: "Self-assessment",
+    body: "Director, partner, landlord, or sole trader returns prepared accurately and filed on time, with proactive reminders before each deadline.",
+  },
+];
+
+const faqs = [
+  {
+    q: "How are your fees structured?",
+    a: "We work on fixed monthly fees agreed in advance, so you always know what you're paying. Each engagement is scoped to the work you actually need, with quarterly reviews to keep things aligned.",
+  },
+  {
+    q: "Do you work with businesses outside Somerset?",
+    a: "Yes. Around half of our clients are based elsewhere in the UK. With cloud accounting and video meetings, location rarely matters — though we're always happy to meet in person when it does.",
+  },
+  {
+    q: "Can you help if my books are in a mess?",
+    a: "Absolutely. A clean-up project is often the first thing we do for a new client. We'll quote a fixed fee for the catch-up work, then move you onto a steady monthly rhythm.",
+  },
+  {
+    q: "Are you regulated?",
+    a: "Yes. Meridian Accountancy Ltd is regulated by the Institute of Chartered Accountants in England and Wales (ICAEW) and registered to carry out audit work.",
+  },
+];
+---
+
+<Layout title="Meridian Accountancy — Chartered Accountants in Somerset">
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <span class="eyebrow">Chartered Accountants · ICAEW Regulated</span>
+        <h1>Numbers you can trust. Advice you can act on.</h1>
+        <p class="lede">
+          Meridian is a Somerset-based practice serving owner-managed businesses, professional
+          partnerships, and private clients across the UK. We pair the technical rigour of a Big
+          Four background with the responsiveness of a small, senior team.
+        </p>
+        <div class="cta-row">
+          <a class="button button-primary" href="/contact">Book a free consultation</a>
+          <a class="button button-ghost" href="/services">Explore our services</a>
+        </div>
+        <ul class="trust-row">
+          <li><strong>20+</strong><span>years' partner experience</span></li>
+          <li><strong>180+</strong><span>active clients</span></li>
+          <li><strong>4.9/5</strong><span>Google reviews</span></li>
+        </ul>
+      </div>
+      <aside class="hero-card">
+        <span class="eyebrow">Quick estimate</span>
+        <h2>How much income tax will you pay?</h2>
+        <p>A rough guide to your 2024/25 liability — adjust the figures to match your circumstances.</p>
+        <TaxEstimator client:load />
+      </aside>
+    </div>
+  </section>
+
+  <section class="services">
+    <div class="container">
+      <header class="section-head">
+        <span class="eyebrow">What we do</span>
+        <h2>Six disciplines, one joined-up team</h2>
+        <p>
+          Whether you need an annual return filed, a forecast that survives a board meeting, or a
+          calm second opinion on a tricky transaction, the same partner is across every piece of
+          your work.
+        </p>
+      </header>
+      <div class="service-grid">
+        {
+          services.map((s) => (
+            <article class="service">
+              <h3>{s.title}</h3>
+              <p>{s.body}</p>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="container cta-inner">
+      <div>
+        <h2>Looking for a more responsive accountant?</h2>
+        <p>
+          We reply to every client email within four working hours and meet quarterly to plan ahead
+          — not just to look back.
+        </p>
+      </div>
+      <a class="button button-primary" href="/contact">Start a conversation</a>
+    </div>
+  </section>
+
+  <section class="faq-section">
+    <div class="container faq-grid">
+      <header>
+        <span class="eyebrow">Frequently asked</span>
+        <h2>Answers to the questions we hear most</h2>
+        <p>
+          Don't see your question? <a href="/contact">Drop us a line</a> — we'll come back to you the same day.
+        </p>
+      </header>
+      <FAQ items={faqs} client:visible />
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .hero {
+    background: linear-gradient(180deg, var(--colour-bg) 0%, var(--colour-surface) 100%);
+    padding-top: 5rem;
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .lede {
+    font-size: 1.15rem;
+    max-width: 52ch;
+  }
+
+  .cta-row {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin: 1.5rem 0 2.5rem;
+  }
+
+  .trust-row {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 2.5rem;
+    border-top: 1px solid var(--colour-border);
+    padding-top: 1.5rem;
+  }
+
+  .trust-row li {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .trust-row strong {
+    font-family: var(--font-serif);
+    font-size: 1.75rem;
+    color: var(--colour-ink);
+  }
+
+  .trust-row span {
+    font-size: 0.85rem;
+    color: var(--colour-ink-soft);
+  }
+
+  .hero-card {
+    background: transparent;
+  }
+
+  .hero-card h2 {
+    font-size: 1.5rem;
+  }
+
+  .section-head {
+    max-width: 60ch;
+    margin: 0 auto 3rem;
+    text-align: center;
+  }
+
+  .service-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .service {
+    background: var(--colour-surface);
+    border: 1px solid var(--colour-border);
+    border-radius: var(--radius);
+    padding: 1.75rem;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+
+  .service:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+  }
+
+  .cta-band {
+    background: var(--colour-ink);
+    color: #fff;
+  }
+
+  .cta-band h2 {
+    color: #fff;
+    margin-bottom: 0.4rem;
+  }
+
+  .cta-band p {
+    color: #cbd2e3;
+    margin: 0;
+  }
+
+  .cta-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+
+  .faq-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 4rem;
+  }
+
+  @media (max-width: 900px) {
+    .hero-grid,
+    .faq-grid,
+    .service-grid,
+    .cta-inner {
+      grid-template-columns: 1fr;
+    }
+    .service-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 560px) {
+    .service-grid {
+      grid-template-columns: 1fr;
+    }
+    .trust-row {
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+  }
+</style>
