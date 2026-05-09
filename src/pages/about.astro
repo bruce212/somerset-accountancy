@@ -1,69 +1,66 @@
 ---
 import Layout from "../layouts/Layout.astro";
 
-const team = [
+const values = [
   {
-    name: "Helena Whitcombe FCA",
-    role: "Managing Partner",
-    bio: "Audit and assurance specialist with 22 years' experience, including eight years as a senior manager at a top-ten firm. Sits on the ICAEW South West regional committee.",
+    title: "Quality for everyone",
+    body: "We believe expert, clear, and honest accounting advice should be accessible to all — not just large companies. Whether you're a sole trader or a growing business, you get the same high standard of service.",
   },
   {
-    name: "Daniel Aldridge CTA",
-    role: "Tax Partner",
-    bio: "Chartered tax advisor focused on owner-managed businesses, R&D claims, and exit planning. Frequent speaker on entrepreneurs' relief and EMI schemes.",
+    title: "Personal approach",
+    body: "You'll have a dedicated account manager who understands your business. We build long-term relationships with our clients, not transactional ones.",
   },
   {
-    name: "Priya Shah ACA",
-    role: "Advisory Director",
-    bio: "Former CFO turned advisor. Builds the forecasts, dashboards, and lender packs that get our clients funded and keep them sleeping at night.",
+    title: "Plain, honest advice",
+    body: "Accounting and tax can be complicated — we make it simple. We explain things clearly, keep you informed, and never leave you in the dark about your finances.",
+  },
+  {
+    title: "Profit-focused thinking",
+    body: "We use the Profit First methodology to help our clients build genuinely profitable, sustainable businesses — not just meet compliance deadlines.",
   },
 ];
 
-const values = [
+const approach = [
   {
-    title: "Plain English first",
-    body: "Tax and accounting jargon doesn't help anyone. Every report, email, and meeting is written for the human reading it, not the regulator filing it.",
+    title: "Peace of mind",
+    body: "We handle your accounting and tax obligations so you can stop worrying about HMRC deadlines and focus on what you do best.",
   },
   {
-    title: "Fixed fees, agreed upfront",
-    body: "No surprise bills. Every engagement starts with a clear scope and a fixed monthly fee, reviewed quarterly so it stays fair on both sides.",
+    title: "More profit",
+    body: "Using the Profit First approach, we help you take control of your finances and build a business that's consistently more profitable.",
   },
   {
-    title: "Senior people, every time",
-    body: "Your work isn't passed to a junior the moment it's signed. The partner who quoted you stays close to your account for the life of the engagement.",
-  },
-  {
-    title: "Proactive, not reactive",
-    body: "We flag tax-saving opportunities before year-end, not after. Quarterly check-ins are built into every engagement.",
+    title: "More time",
+    body: "With your bookkeeping, payroll, and accounts in our hands, you get back valuable time to invest in growing your business or enjoying the rewards of running one.",
   },
 ];
 ---
 
 <Layout
-  title="About — Meridian Accountancy"
-  description="Meet the team behind Meridian Accountancy — chartered accountants and tax advisors based in Somerset."
+  title="About — Somerset Accountancy Services Ltd"
+  description="Somerset Accountancy Services Ltd — quality, affordable accounting for businesses and individuals across Somerset since 1992."
 >
   <section class="page-hero">
     <div class="container hero-grid">
       <div>
         <span class="eyebrow">About us</span>
-        <h1>A practice built on long client relationships</h1>
+        <h1>Serving Somerset businesses since 1992</h1>
         <p class="lede">
-          Meridian was founded in 2014 by Helena Whitcombe after twelve years inside larger firms.
-          The brief was simple: deliver the technical depth of a national practice, with the
-          attention and continuity you only get from a smaller team.
+          Somerset Accountancy Services was established in August 1992 with one clear purpose:
+          to deliver quality, affordable accounting services to small and medium-sized businesses
+          and individual clients across Somerset and the surrounding areas.
         </p>
         <p>
-          A decade on, that brief still holds. We've grown to fourteen people across our Taunton
-          office, but every client still has a partner-level relationship and a direct line to the
-          person doing the work.
+          More than thirty years on, that purpose remains unchanged. We provide expert, clear,
+          and honest advice — and every client has a dedicated account manager who knows their
+          business inside out.
         </p>
       </div>
       <div class="stats">
-        <div><strong>2014</strong><span>Founded</span></div>
-        <div><strong>14</strong><span>People</span></div>
-        <div><strong>180+</strong><span>Active clients</span></div>
-        <div><strong>£42m</strong><span>Client turnover advised</span></div>
+        <div><strong>1992</strong><span>Established</span></div>
+        <div><strong>30+</strong><span>Years' experience</span></div>
+        <div><strong>SMEs</strong><span>&amp; individuals served</span></div>
+        <div><strong>Somerset</strong><span>&amp; surrounding areas</span></div>
       </div>
     </div>
   </section>
@@ -72,7 +69,7 @@ const values = [
     <div class="container">
       <header class="section-head">
         <span class="eyebrow">Our values</span>
-        <h2>Four things we won't compromise on</h2>
+        <h2>What we stand for</h2>
       </header>
       <div class="values-grid">
         {
@@ -90,23 +87,19 @@ const values = [
   <section class="team-section">
     <div class="container">
       <header class="section-head">
-        <span class="eyebrow">The team</span>
-        <h2>Meet your partners</h2>
+        <span class="eyebrow">What we deliver</span>
+        <h2>Three things every client gets</h2>
+        <p>
+          We measure our success not by the number of returns filed, but by the difference we
+          make to the businesses and individuals we work with.
+        </p>
       </header>
       <div class="team-grid">
         {
-          team.map((member) => (
+          approach.map((item) => (
             <article class="team-card">
-              <div class="avatar" aria-hidden="true">
-                {member.name
-                  .split(" ")
-                  .slice(0, 2)
-                  .map((w) => w[0])
-                  .join("")}
-              </div>
-              <h3>{member.name}</h3>
-              <span class="role">{member.role}</span>
-              <p>{member.bio}</p>
+              <h3>{item.title}</h3>
+              <p>{item.body}</p>
             </article>
           ))
         }
@@ -194,27 +187,6 @@ const values = [
     border: 1px solid var(--colour-border);
   }
 
-  .avatar {
-    width: 56px;
-    height: 56px;
-    border-radius: 50%;
-    background: var(--colour-ink);
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: var(--font-serif);
-    font-weight: 600;
-    margin-bottom: 1rem;
-  }
-
-  .role {
-    color: var(--colour-accent-deep);
-    font-size: 0.9rem;
-    font-weight: 600;
-    display: block;
-    margin: -0.25rem 0 0.75rem;
-  }
 
   @media (max-width: 800px) {
     .hero-grid,

@@ -8,11 +8,14 @@
   let error = $state<string | null>(null);
 
   const services = [
-    "Audit & assurance",
-    "Tax planning",
-    "Bookkeeping & payroll",
-    "Year-end accounts",
-    "Business advisory",
+    "Annual accounts",
+    "Tax returns",
+    "Bookkeeping & VAT",
+    "Payroll",
+    "Company secretarial",
+    "Business advice",
+    "Fee protection insurance",
+    "Cloud accounting",
     "Other",
   ];
 

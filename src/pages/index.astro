@@ -8,70 +8,75 @@ const url = (p: string) => `${base}${p.replace(/^\//, "")}`;
 
 const services = [
   {
-    title: "Year-end accounts",
-    body: "Statutory accounts prepared and filed with Companies House and HMRC, with clear commentary on what the numbers mean for your business.",
+    title: "Annual accounts",
+    body: "Comprehensive final accounts produced through specialist software for both limited companies and sole traders, with clear explanations of what the numbers mean.",
   },
   {
-    title: "Tax planning",
-    body: "Corporate, personal, and capital gains tax strategies designed to keep more of what you earn — fully compliant, fully documented.",
+    title: "Tax returns",
+    body: "Business and personal tax returns prepared accurately and on time, with expert advice integrated throughout to minimise your liability.",
   },
   {
-    title: "Bookkeeping & payroll",
-    body: "Cloud bookkeeping on Xero or QuickBooks, RTI payroll, pension auto-enrolment, and a real-time view of your finances.",
+    title: "Bookkeeping & VAT",
+    body: "Monthly or quarterly bookkeeping that keeps your records up to date and ensures you meet VAT deadlines — so you can focus on running your business.",
   },
   {
-    title: "Audit & assurance",
-    body: "Statutory audits, grant audits, and assurance reviews delivered to ICAEW standards by a team that listens before it tests.",
+    title: "Payroll",
+    body: "Weekly, fortnightly, or monthly payroll processing including CIS returns and auto-enrolment pension administration, handled on your behalf.",
   },
   {
-    title: "Business advisory",
-    body: "Forecasting, cashflow modelling, KPI dashboards, and board-level support — the conversations that change the trajectory of a business.",
+    title: "Business advice",
+    body: "Expert guidance on financial decision-making, strategy, risk management, and efficiency — the kind of practical advice that helps your business grow.",
   },
   {
-    title: "Self-assessment",
-    body: "Director, partner, landlord, or sole trader returns prepared accurately and filed on time, with proactive reminders before each deadline.",
+    title: "Cloud accounting",
+    body: "One-to-one training and ongoing support to help you get the most from online accounting software, making your finances more visible and accessible.",
   },
 ];
 
 const faqs = [
   {
-    q: "How are your fees structured?",
-    a: "We work on fixed monthly fees agreed in advance, so you always know what you're paying. Each engagement is scoped to the work you actually need, with quarterly reviews to keep things aligned.",
+    q: "Who do you typically work with?",
+    a: "We work with small and medium-sized businesses, sole traders, partnerships, and individual clients across Somerset and the surrounding areas. Whether you're just starting out or have been trading for decades, we can help.",
   },
   {
-    q: "Do you work with businesses outside Somerset?",
-    a: "Yes. Around half of our clients are based elsewhere in the UK. With cloud accounting and video meetings, location rarely matters — though we're always happy to meet in person when it does.",
+    q: "What is the Profit First methodology?",
+    a: "Profit First is a cash management approach that ensures your business is profitable from day one — rather than treating profit as whatever's left at year-end. We use it to help clients build financial habits that lead to sustainable growth.",
   },
   {
-    q: "Can you help if my books are in a mess?",
-    a: "Absolutely. A clean-up project is often the first thing we do for a new client. We'll quote a fixed fee for the catch-up work, then move you onto a steady monthly rhythm.",
+    q: "Can you take over from my current accountant?",
+    a: "Yes, switching is straightforward. Once you appoint us, we handle the handover from your previous accountant and make sure there's no gap in your compliance. You don't need to do anything awkward.",
   },
   {
-    q: "Are you regulated?",
-    a: "Yes. Meridian Accountancy Ltd is regulated by the Institute of Chartered Accountants in England and Wales (ICAEW) and registered to carry out audit work.",
+    q: "Do you offer ongoing support or just year-end work?",
+    a: "We offer both. Many clients come to us for year-end accounts and tax returns, while others take advantage of our monthly bookkeeping, payroll, and management reporting services for year-round support.",
+  },
+  {
+    q: "How do I get started?",
+    a: "Just give us a call on 01458 310020 or send an email to info@somersetaccountancy.co.uk. We'll have a no-obligation chat about what you need and put together a clear proposal.",
   },
 ];
 ---
 
-<Layout title="Meridian Accountancy — Chartered Accountants in Somerset">
+<Layout title="Somerset Accountancy — Accountants for Business Owners in Somerset">
   <section class="hero">
     <div class="container hero-grid">
       <div>
-        <span class="eyebrow">Chartered Accountants · ICAEW Regulated</span>
-        <h1>Numbers you can trust. Advice you can act on.</h1>
+        <span class="eyebrow">Somerset-based · Established 1992</span>
+        <h1>Less stress. More profit. More time for what matters.</h1>
         <p class="lede">
-          Meridian is a Somerset-based practice serving owner-managed businesses, professional
-          partnerships, and private clients across the UK. We pair the technical rigour of a Big
-          Four background with the responsiveness of a small, senior team.
+          Somerset Accountancy Services has been delivering quality, affordable accounting to
+          businesses and individuals across Somerset since 1992. We give you peace of mind,
+          help you build a more profitable business, and free up your time to focus on what you
+          do best.
         </p>
         <div class="cta-row">
-          <a class="button button-primary" href={url("/contact")}>Book a free consultation</a>
-          <a class="button button-ghost" href={url("/services")}>Explore our services</a>
+          <a class="button button-primary" href="/contact">Get in touch</a>
+          <a class="button button-ghost" href="/services">Explore our services</a>
         </div>
         <ul class="trust-row">
-          <li><strong>20+</strong><span>years' partner experience</span></li>
-          <li><strong>180+</strong><span>active clients</span></li>
-          <li><strong>4.9/5</strong><span>Google reviews</span></li>
+          <li><strong>1992</strong><span>Established</span></li>
+          <li><strong>30+</strong><span>years' experience</span></li>
+          <li><strong>Personal</strong><span>dedicated account manager</span></li>
         </ul>
       </div>
       <aside class="hero-card">
@@ -87,11 +92,11 @@ const faqs = [
     <div class="container">
       <header class="section-head">
         <span class="eyebrow">What we do</span>
-        <h2>Six disciplines, one joined-up team</h2>
+        <h2>Everything you need to stay compliant and grow</h2>
         <p>
-          Whether you need an annual return filed, a forecast that survives a board meeting, or a
-          calm second opinion on a tricky transaction, the same partner is across every piece of
-          your work.
+          From annual accounts and tax returns to payroll, bookkeeping, and strategic business
+          advice — we provide a complete accounting service tailored to the size and ambitions of
+          your business.
         </p>
       </header>
       <div class="service-grid">
@@ -110,10 +115,10 @@ const faqs = [
   <section class="cta-band">
     <div class="container cta-inner">
       <div>
-        <h2>Looking for a more responsive accountant?</h2>
+        <h2>Ready for an accountant who truly works for your business?</h2>
         <p>
-          We reply to every client email within four working hours and meet quarterly to plan ahead
-          — not just to look back.
+          We've been helping Somerset businesses and individuals since 1992. Get in touch for a
+          no-obligation conversation about how we can help you.
         </p>
       </div>
       <a class="button button-primary" href={url("/contact")}>Start a conversation</a>
@@ -126,7 +131,7 @@ const faqs = [
         <span class="eyebrow">Frequently asked</span>
         <h2>Answers to the questions we hear most</h2>
         <p>
-          Don't see your question? <a href={url("/contact")}>Drop us a line</a> — we'll come back to you the same day.
+          Don't see your question? <a href="/contact">Get in touch</a> — we're always happy to have a chat.
         </p>
       </header>
       <FAQ items={faqs} client:visible />
