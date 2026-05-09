@@ -3,6 +3,9 @@ import Layout from "../layouts/Layout.astro";
 import TaxEstimator from "../components/TaxEstimator.svelte";
 import FAQ from "../components/FAQ.svelte";
 
+const base = import.meta.env.BASE_URL;
+const url = (p: string) => `${base}${p.replace(/^\//, "")}`;
+
 const services = [
   {
     title: "Year-end accounts",
@@ -62,8 +65,8 @@ const faqs = [
           Four background with the responsiveness of a small, senior team.
         </p>
         <div class="cta-row">
-          <a class="button button-primary" href="/contact">Book a free consultation</a>
-          <a class="button button-ghost" href="/services">Explore our services</a>
+          <a class="button button-primary" href={url("/contact")}>Book a free consultation</a>
+          <a class="button button-ghost" href={url("/services")}>Explore our services</a>
         </div>
         <ul class="trust-row">
           <li><strong>20+</strong><span>years' partner experience</span></li>
@@ -113,7 +116,7 @@ const faqs = [
           — not just to look back.
         </p>
       </div>
-      <a class="button button-primary" href="/contact">Start a conversation</a>
+      <a class="button button-primary" href={url("/contact")}>Start a conversation</a>
     </div>
   </section>
 
@@ -123,7 +126,7 @@ const faqs = [
         <span class="eyebrow">Frequently asked</span>
         <h2>Answers to the questions we hear most</h2>
         <p>
-          Don't see your question? <a href="/contact">Drop us a line</a> — we'll come back to you the same day.
+          Don't see your question? <a href={url("/contact")}>Drop us a line</a> — we'll come back to you the same day.
         </p>
       </header>
       <FAQ items={faqs} client:visible />

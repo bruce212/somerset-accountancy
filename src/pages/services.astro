@@ -1,6 +1,9 @@
 ---
 import Layout from "../layouts/Layout.astro";
 
+const base = import.meta.env.BASE_URL;
+const url = (p: string) => `${base}${p.replace(/^\//, "")}`;
+
 const sectors = [
   {
     name: "Owner-managed businesses",
@@ -134,7 +137,7 @@ const services = [
   <section class="cta-band">
     <div class="container cta-inner">
       <h2>Not sure which service you need?</h2>
-      <a class="button button-primary" href="/contact">Book a 30-minute discovery call</a>
+      <a class="button button-primary" href={url("/contact")}>Book a 30-minute discovery call</a>
     </div>
   </section>
 </Layout>
