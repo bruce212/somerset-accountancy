@@ -1,0 +1,231 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const sectors = [
+  {
+    name: "Owner-managed businesses",
+    body: "Limited companies turning over £250k–£10m. We take year-end and tax off your plate, and bring forecasting and management info that helps you steer.",
+  },
+  {
+    name: "Professional partnerships",
+    body: "Solicitors, architects, vets, and consultants. Partnership accounts, profit-share modelling, and personal tax for every partner under one engagement.",
+  },
+  {
+    name: "Property & landlords",
+    body: "Portfolio landlords, FHL operators, and developers. Section 24 planning, incorporation reviews, and CGT on disposals — without surprises in April.",
+  },
+  {
+    name: "Charities & not-for-profits",
+    body: "Independent examinations, statutory audits where required, SORP-compliant accounts, and trustee-friendly reporting.",
+  },
+];
+
+const services = [
+  {
+    title: "Year-end accounts",
+    points: [
+      "Statutory accounts under FRS 102 / 105",
+      "Corporation tax computations and CT600",
+      "Companies House and HMRC filings",
+      "Plain-English commentary for directors",
+    ],
+  },
+  {
+    title: "Tax planning & compliance",
+    points: [
+      "Self-assessment for directors, partners, and landlords",
+      "Capital gains tax planning and 60-day reporting",
+      "R&D tax relief claims",
+      "Inheritance tax and family wealth planning",
+      "VAT registration, MTD compliance, and reviews",
+    ],
+  },
+  {
+    title: "Bookkeeping & payroll",
+    points: [
+      "Cloud bookkeeping on Xero or QuickBooks",
+      "Monthly management accounts",
+      "RTI payroll for 1–250 staff",
+      "Auto-enrolment pension administration",
+      "CIS for contractors and subcontractors",
+    ],
+  },
+  {
+    title: "Audit & assurance",
+    points: [
+      "Statutory company audits",
+      "Charity independent examinations",
+      "Grant-funded project audits",
+      "Solicitors Accounts Rules reviews",
+      "Internal control reviews",
+    ],
+  },
+  {
+    title: "Business advisory",
+    points: [
+      "Three-way forecasting and cashflow modelling",
+      "KPI dashboards and management reporting",
+      "Funding applications and lender packs",
+      "Acquisitions, exits, and due diligence",
+      "Quarterly board-level reviews",
+    ],
+  },
+];
+---
+
+<Layout
+  title="Services — Meridian Accountancy"
+  description="Audit, tax, bookkeeping, payroll, and advisory services for UK businesses, partnerships, and private clients."
+>
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow">Services</span>
+      <h1>One firm. Every discipline you'll need.</h1>
+      <p class="lede">
+        From the first invoice to the final exit, we cover the full life-cycle of a modern UK
+        business. Engagements are scoped in plain English, priced as fixed monthly fees, and led by
+        a partner who actually knows your name.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="services-list">
+        {
+          services.map((s) => (
+            <article>
+              <h2>{s.title}</h2>
+              <ul>
+                {s.points.map((p) => (
+                  <li>{p}</li>
+                ))}
+              </ul>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="sectors">
+    <div class="container">
+      <header class="section-head">
+        <span class="eyebrow">Sectors we know</span>
+        <h2>Specialists, not generalists</h2>
+        <p>
+          Our partners have spent years inside these sectors. The technical knowledge is already
+          there — you don't pay for us to learn on the job.
+        </p>
+      </header>
+      <div class="sector-grid">
+        {
+          sectors.map((s) => (
+            <article class="sector">
+              <h3>{s.name}</h3>
+              <p>{s.body}</p>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="container cta-inner">
+      <h2>Not sure which service you need?</h2>
+      <a class="button button-primary" href="/contact">Book a 30-minute discovery call</a>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .page-hero {
+    background: var(--colour-surface);
+    border-bottom: 1px solid var(--colour-border);
+    padding: 5rem 0 4rem;
+  }
+
+  .lede {
+    font-size: 1.1rem;
+    max-width: 60ch;
+  }
+
+  .services-list {
+    display: grid;
+    gap: 2.5rem;
+  }
+
+  .services-list article {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 2rem;
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid var(--colour-border);
+  }
+
+  .services-list article:last-child {
+    border-bottom: none;
+  }
+
+  .services-list h2 {
+    margin: 0;
+  }
+
+  .services-list ul {
+    margin: 0;
+    padding-left: 1.1rem;
+    color: var(--colour-ink-soft);
+  }
+
+  .services-list li {
+    padding: 0.25rem 0;
+  }
+
+  .section-head {
+    max-width: 60ch;
+    margin: 0 auto 3rem;
+    text-align: center;
+  }
+
+  .sectors {
+    background: var(--colour-surface);
+  }
+
+  .sector-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .sector {
+    background: var(--colour-bg);
+    padding: 1.75rem;
+    border-radius: var(--radius);
+    border: 1px solid var(--colour-border);
+  }
+
+  .cta-band {
+    background: var(--colour-ink);
+  }
+
+  .cta-band h2 {
+    color: #fff;
+    margin: 0;
+  }
+
+  .cta-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+
+  @media (max-width: 720px) {
+    .services-list article,
+    .sector-grid,
+    .cta-inner {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

@@ -1,0 +1,87 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <h3>Meridian Accountancy</h3>
+      <p>Chartered accountants and tax advisors based in Somerset, serving clients across the South West and beyond.</p>
+    </div>
+    <div>
+      <h4>Office</h4>
+      <p>
+        14 Market Place<br />
+        Taunton, Somerset<br />
+        TA1 3SX
+      </p>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <p>
+        <a href="tel:+441823000000">01823 000 000</a><br />
+        <a href="mailto:hello@meridian-accountancy.co.uk">hello@meridian-accountancy.co.uk</a>
+      </p>
+    </div>
+    <div>
+      <h4>Regulated by</h4>
+      <p>The Institute of Chartered Accountants in England and Wales (ICAEW).</p>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <span>&copy; {year} Meridian Accountancy Ltd. Registered in England.</span>
+    <span>Company no. 00000000 &middot; VAT GB000000000</span>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background: var(--colour-ink);
+    color: #cbd2e3;
+    padding: 4rem 0 2rem;
+    margin-top: 4rem;
+  }
+
+  .site-footer h3,
+  .site-footer h4 {
+    color: #fff;
+  }
+
+  .site-footer p,
+  .site-footer span {
+    color: #cbd2e3;
+    font-size: 0.92rem;
+  }
+
+  .site-footer a {
+    color: #fff;
+    text-decoration: underline;
+    text-decoration-color: var(--colour-accent);
+    text-underline-offset: 3px;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 2.5rem;
+  }
+
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    font-size: 0.85rem;
+  }
+
+  @media (max-width: 720px) {
+    .footer-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+    .footer-bottom {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+  }
+</style>

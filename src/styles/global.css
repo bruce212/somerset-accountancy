@@ -1,0 +1,130 @@
+:root {
+  --colour-bg: #f7f5f0;
+  --colour-surface: #ffffff;
+  --colour-ink: #14213d;
+  --colour-ink-soft: #4b5470;
+  --colour-accent: #b08d57;
+  --colour-accent-deep: #8c6d3f;
+  --colour-border: #e6e2d6;
+  --max-width: 1120px;
+  --radius: 6px;
+  --shadow: 0 8px 24px rgba(20, 33, 61, 0.08);
+  --font-serif: "Source Serif Pro", "Georgia", "Times New Roman", serif;
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  color: var(--colour-ink);
+  background: var(--colour-bg);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-serif);
+  color: var(--colour-ink);
+  line-height: 1.2;
+  margin: 0 0 0.5em;
+  font-weight: 600;
+}
+
+h1 {
+  font-size: clamp(2rem, 4vw + 1rem, 3.25rem);
+}
+
+h2 {
+  font-size: clamp(1.5rem, 2vw + 1rem, 2.25rem);
+}
+
+h3 {
+  font-size: 1.25rem;
+}
+
+p {
+  margin: 0 0 1em;
+  color: var(--colour-ink-soft);
+}
+
+a {
+  color: var(--colour-accent-deep);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+a:hover {
+  color: var(--colour-ink);
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+.button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius);
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.button-primary {
+  background: var(--colour-accent);
+  color: #fff;
+}
+
+.button-primary:hover {
+  background: var(--colour-accent-deep);
+  color: #fff;
+}
+
+.button-ghost {
+  background: transparent;
+  color: var(--colour-ink);
+  border-color: var(--colour-border);
+}
+
+.button-ghost:hover {
+  border-color: var(--colour-ink);
+  color: var(--colour-ink);
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.8rem;
+  color: var(--colour-accent-deep);
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  display: inline-block;
+}
+
+section {
+  padding: 5rem 0;
+}
+
+@media (max-width: 640px) {
+  section {
+    padding: 3.5rem 0;
+  }
+}
