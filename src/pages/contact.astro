@@ -4,17 +4,17 @@ import ContactForm from "../components/ContactForm.svelte";
 ---
 
 <Layout
-  title="Contact — Meridian Accountancy"
-  description="Get in touch with Meridian Accountancy in Taunton, Somerset. Free 30-minute discovery calls available."
+  title="Contact — Somerset Accountancy Services Ltd"
+  description="Get in touch with Somerset Accountancy Services — call 01458 310020 or email info@somersetaccountancy.co.uk."
 >
   <section class="page-hero">
     <div class="container">
       <span class="eyebrow">Contact</span>
       <h1>Let's talk</h1>
       <p class="lede">
-        Whether you're switching from another firm, starting your first company, or facing a
-        deadline that's gone sideways — we'd like to hear from you. Discovery calls are free and
-        last about thirty minutes.
+        Whether you're looking for a new accountant, want to find out more about a specific
+        service, or just have a question — we'd love to hear from you. Get in touch and we'll
+        get back to you promptly.
       </p>
     </div>
   </section>
@@ -24,41 +24,37 @@ import ContactForm from "../components/ContactForm.svelte";
       <div class="contact-info">
         <h2>Get in touch</h2>
         <dl>
-          <dt>Office</dt>
-          <dd>
-            14 Market Place<br />
-            Taunton, Somerset<br />
-            TA1 3SX
-          </dd>
-
           <dt>Telephone</dt>
-          <dd><a href="tel:+441823000000">01823 000 000</a></dd>
+          <dd><a href="tel:01458310020">01458 310020</a></dd>
 
           <dt>Email</dt>
           <dd>
-            <a href="mailto:hello@meridian-accountancy.co.uk">hello@meridian-accountancy.co.uk</a>
+            <a href="mailto:info@somersetaccountancy.co.uk">info@somersetaccountancy.co.uk</a>
           </dd>
+
+          <dt>Location</dt>
+          <dd>Somerset, England</dd>
 
           <dt>Hours</dt>
           <dd>
             Monday – Friday<br />
-            08:30 – 17:30
+            09:00 – 17:00
           </dd>
         </dl>
 
         <div class="info-card">
           <h3>Switching to us?</h3>
           <p>
-            Changing accountant is straightforward. Once you've appointed us, we handle the
-            professional clearance and document handover with your current firm — you don't have to
-            do anything awkward.
+            Changing accountant is simpler than you think. Once you appoint us, we handle the
+            handover from your previous accountant and make sure there's no gap in your
+            compliance — you don't have to do anything awkward.
           </p>
         </div>
       </div>
 
       <div class="form-wrap">
         <h2>Send us an enquiry</h2>
-        <p>We aim to respond within four working hours.</p>
+        <p>We aim to get back to you the same working day.</p>
         <ContactForm client:load />
       </div>
     </div>
