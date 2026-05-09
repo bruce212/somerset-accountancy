@@ -33,6 +33,8 @@
 
   const fmt = (n: number) =>
     new Intl.NumberFormat("en-GB", { style: "currency", currency: "GBP", maximumFractionDigits: 0 }).format(n);
+
+  const contactUrl = `${import.meta.env.BASE_URL}contact`;
 </script>
 
 <div class="estimator">
@@ -79,7 +81,7 @@
   <p class="disclaimer">
     Indicative figures based on 2024/25 England, Wales &amp; NI bands. Excludes National Insurance,
     student loans, pension contributions, and Scottish rates. For a tailored calculation,
-    <a href="/contact">speak to one of our advisors</a>.
+    <a href={contactUrl}>speak to one of our advisors</a>.
   </p>
 </div>
 

@@ -3,6 +3,9 @@ import Layout from "../layouts/Layout.astro";
 import TaxEstimator from "../components/TaxEstimator.svelte";
 import FAQ from "../components/FAQ.svelte";
 
+const base = import.meta.env.BASE_URL;
+const url = (p: string) => `${base}${p.replace(/^\//, "")}`;
+
 const services = [
   {
     title: "Annual accounts",
@@ -118,7 +121,7 @@ const faqs = [
           no-obligation conversation about how we can help you.
         </p>
       </div>
-      <a class="button button-primary" href="/contact">Start a conversation</a>
+      <a class="button button-primary" href={url("/contact")}>Start a conversation</a>
     </div>
   </section>
 

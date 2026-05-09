@@ -1,11 +1,15 @@
 ---
+const base = import.meta.env.BASE_URL; // e.g. "/somerset-accountancy/"
+const url = (p: string) => (p === "/" ? base : `${base}${p.replace(/^\//, "")}`);
+
 const links = [
-  { href: "/", label: "Home" },
-  { href: "/services", label: "Services" },
-  { href: "/about", label: "About" },
-  { href: "/contact", label: "Contact" },
+  { href: url("/"), label: "Home" },
+  { href: url("/services"), label: "Services" },
+  { href: url("/about"), label: "About" },
+  { href: url("/contact"), label: "Contact" },
 ];
-const path = Astro.url.pathname;
+const path = Astro.url.pathname.replace(/\/$/, "") || "/";
+const norm = (h: string) => h.replace(/\/$/, "") || "/";
 ---
 
 <header class="site-header">
@@ -23,7 +27,11 @@ const path = Astro.url.pathname;
                 href={link.href}
                 class:list={[
                   "nav-link",
-                  { active: path === link.href || (link.href !== "/" && path.startsWith(link.href)) },
+                  {
+                    active:
+                      path === norm(link.href) ||
+                      (norm(link.href) !== norm(base) && path.startsWith(norm(link.href))),
+                  },
                 ]}
               >
                 {link.label}
@@ -33,7 +41,7 @@ const path = Astro.url.pathname;
         }
       </ul>
     </nav>
-    <a class="button button-primary header-cta" href="/contact">Book a consultation</a>
+    <a class="button button-primary header-cta" href={url("/contact")}>Book a consultation</a>
   </div>
 </header>
 
